@@ -73,10 +73,10 @@
                     <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link color-pink-hover" href="index.html">Home</a>
+                                <a class="nav-link color-pink-hover" href="<?= base_url(); ?>">Home</a>
                             </li>
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                                <a class="nav-link dropdown-toggle" href="<?= base_url('warta'); ?>" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warta</a>
                                 <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
                                     <li>
                                         <div class="mega-menu-content clearfix">
