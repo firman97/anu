@@ -16,4 +16,13 @@ class Warta extends CI_Controller {
 						'isi' 	=> 'front/warta/list');
 		$this->load->view('front/layout/wrapper', $data);
 	}
+
+	public function detail()
+	{
+		$warta 		= $this->Warta_model->listWarta();
+		$data = array(
+						'warta'	=> $warta,
+						'isi' 	=> 'front/warta/read');
+		$this->load->view('front/layout/wrapper', $data);
+	}
 }

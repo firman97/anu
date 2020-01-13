@@ -38,7 +38,7 @@
                                         <div class="col-md-6">
                                         <div class="blog-box">
                                             <div class="post-media">
-                                                <a href="single.html" title="">
+                                                <a href="<?= base_url('warta/detail/'.$wartas->blog_id); ?>" title="">
                                                     <img src="<?php echo base_url();?>assets/front/upload/blog_travel_01.jpg" alt="" class="img-fluid">
                                                     <div class="hovereffect">
                                                         <span></span>
@@ -46,8 +46,7 @@
                                                 </a>
                                             </div><!-- end media -->
                                             <div class="blog-meta big-meta">
-                                                <h4><a href="single.html" title=""><?= $wartas->title; ?></a></h4>
-                                                <p><?= $wartas->content ?></p>
+                                                <h4><a href="<?= base_url('warta/detail/'.$wartas->blog_id); ?>" title=""><?= $wartas->title; ?></a></h4>
                                                 <small><a href="blog-category-01.html" title="">Travel</a></small>
                                                 <small><a href="single.html" title="">24 July, 2017</a></small>
                                                 <small><a href="blog-author.html" title="">by Amanda</a></small>

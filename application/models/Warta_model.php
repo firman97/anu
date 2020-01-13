@@ -12,9 +12,12 @@
         }
 
         // Listing Blogs
-        public function listWarta() {
+        public function listWarta($id = null) {
             $this->db->select('*');
             $this->db->from('warta');
+            if($id != null){
+                $this->db->where('blog_id', $id);
+            }
             $query = $this->db->get();
             return $query;
         }                                                                                      
