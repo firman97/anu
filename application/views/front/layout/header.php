@@ -78,9 +78,8 @@
                             <li class="nav-item dropdown has-submenu">
                                 <a class="nav-link dropdown-toggle" href="<?= base_url('warta'); ?>" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warta</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <?php foreach($warta->result() as $key => $wartas ) : ?>
-                                    <li><a class="dropdown-item" href="<?= base_url('warta/kategori/'.$wartas->category_id); ?>"><?= $wartas->category_name; ?></a></li>
-                                    <?php endforeach; ?>
+                                    <li><a class="dropdown-item" href="<?= base_url('warta/kategori/1'); ?>">Nasional</a></li>
+                                    <li><a class="dropdown-item" href="<?= base_url('warta/kategori/2'); ?>">Daerah</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">

@@ -27,10 +27,12 @@ class Warta extends CI_Controller {
 	}
 
 	public function kategori($id){
-		$warta 		= $this->Warta_model->listWarta($id);
+		$warta 		= $this->Warta_model->getAllWartaByCategory($id);
+		$category 		= $this->Warta_model->getCategoryById($id);
 		$data = array(
 						'warta'	=> $warta,
-						'isi' 	=> 'front/warta/list');
+						'category' => $category,
+						'isi' 	=> 'front/warta/category');
 		$this->load->view('front/layout/wrapper', $data);
 	}
 }

@@ -2,13 +2,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <h2><i class="fa fa-car bg-green"></i> Travel <small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
+                        <h2><i class="fa fa-car bg-green"></i> Warta </h2>
                     </div><!-- end col -->
                     <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                            <li class="breadcrumb-item active">Travel</li>
+                            <li class="breadcrumb-item"><a href="<?= base_url('warta'); ?>">Warta</a></li>
                         </ol>
                     </div><!-- end col -->                    
                 </div><!-- end row -->
@@ -47,7 +45,7 @@
                                             </div><!-- end media -->
                                             <div class="blog-meta big-meta">
                                                 <h4><a href="<?= base_url('warta/detail/'.$wartas->blog_id); ?>" title=""><?= $wartas->title; ?></a></h4>
-                                                <small><a href="blog-category-01.html" title=""><?= $wartas->category_name; ?></a></small>
+                                                <small><a href="<?= base_url('warta/kategori/'.$wartas->category_id); ?>" title=""><?= $wartas->category_name; ?></a></small>
                                                 <small><a href="single.html" title=""><?= date('l, d/m/Y', strtotime($wartas->date_post)); ?></a></small>
                                                 <small><a href="blog-author.html" title="">by Amanda</a></small>
                                             </div><!-- end meta -->

@@ -7,16 +7,16 @@
                             <div class="blog-title-area">
                                 <ol class="breadcrumb hidden-xs-down">
                                     <li class="breadcrumb-item"><a href="#">Warta</a></li>
-                                    <li class="breadcrumb-item"><a href="#"><?= $wartas->category_name; ?></a></li>
+                                    <li class="breadcrumb-item"><a href="<?= base_url('warta/kategori/'.$wartas->category_id); ?>"><?= $wartas->category_name; ?></a></li>
                                     <li class="breadcrumb-item active"><?= $wartas->title; ?></li>
                                 </ol>
 
-                                <span class="color-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>
+                                <span class="color-aqua"><a href="blog-category-01.html" title=""><?= $wartas->category_name; ?></a></span>
 
                                 <h3><?= $wartas->title; ?></h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="single.html" title="">21 July, 2017</a></small>
+                                    <small><a href="single.html" title=""><?= date('l, d/m/Y', strtotime($wartas->date_post)); ?></a></small>
                                     <small><a href="blog-author.html" title="">by Jessica</a></small>
                                     <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
                                 </div><!-- end meta -->
@@ -43,7 +43,7 @@
                             <div class="blog-title-area">
                                 <div class="tag-cloud-single">
                                     <span>Tags</span>
-                                    <small><a href="#" title="">lifestyle</a></small>
+                                    <small><a href="<?= base_url('warta/kategori/'.$wartas->category_id); ?>" title=""><?= $wartas->category_name; ?></a></small>
                                     <small><a href="#" title="">colorful</a></small>
                                     <small><a href="#" title="">trending</a></small>
                                     <small><a href="#" title="">another tag</a></small>

@@ -29,6 +29,30 @@
             return $query;
         } 
 
+        public function getAllWartaByCategory($slugBlog) {
+            $this->db->select(' warta.blog_id,
+                                warta.slug_blog,
+                                warta.title,
+                                warta.date_post,
+                                warta.content,
+                                kategori.category_id,
+                                kategori.category_name,
+                                kategori.slug_category,
+                             ');
+            $this->db->join('kategori','kategori.category_id = warta.category_id','LEFT');
+            $this->db->where('kategori.category_id', $slugBlog); 
+            $query = $this->db->get('warta');
+            return $query;
+        } 
+
+        public function getCategoryById($slugBlog) {
+            $this->db->select('*');
+            $this->db->from('kategori');
+            $this->db->where('category_id', $slugBlog); 
+            $query = $this->db->get();
+            return $query;
+        } 
+
                                                                                             
 
     }

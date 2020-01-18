@@ -15,14 +15,6 @@
             }
             $query = $this->db->get();
             return $query;
-        }    
-
-        // Listing Blogs
-        // public function listCategory() {
-        //     $this->db->select('*');
-        //     $this->db->from('kategori');
-        //     $query = $this->db->get();
-        //     return $query;
-        // }                                                                                      
+        }                                                                                     
 
     }
