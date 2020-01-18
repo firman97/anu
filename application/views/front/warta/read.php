@@ -57,7 +57,7 @@
                                     </ul>
                                 </div><!-- end post-sharing -->
                             </div><!-- end title -->
-                            <?php endforeach; ?>
+                            <!-- <?php endforeach; ?> -->
 
                             <div class="row">
                                 <div class="col-lg-12">

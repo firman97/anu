@@ -19,7 +19,7 @@ class Warta extends CI_Controller {
 
 	public function detail($slugBlog)
 	{
-		$warta = $this->Warta_model->listWarta($slugBlog);
+		$warta = $this->Warta_model->readWarta($slugBlog);
 		$data = array(
 						'warta'	=> $warta,
 						'isi' 	=> 'front/warta/read');
