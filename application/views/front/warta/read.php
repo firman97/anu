@@ -3,11 +3,11 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
-                        <?php foreach($warta->result() as $key => $wartas) : ?>
+                            <?php foreach($warta->result() as $key => $wartas ) : ?>
                             <div class="blog-title-area">
                                 <ol class="breadcrumb hidden-xs-down">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Warta</a></li>
+                                    <li class="breadcrumb-item"><a href="#"><?= $wartas->category_name; ?></a></li>
                                     <li class="breadcrumb-item active"><?= $wartas->title; ?></li>
                                 </ol>
 
@@ -57,8 +57,7 @@
                                     </ul>
                                 </div><!-- end post-sharing -->
                             </div><!-- end title -->
-
-                            <?php endforeach;?>
+                            <?php endforeach; ?>
 
                             <div class="row">
                                 <div class="col-lg-12">

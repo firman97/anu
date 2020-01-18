@@ -1,0 +1,2 @@
+1 = nasional
+2 = daerah

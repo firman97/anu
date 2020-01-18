@@ -75,14 +75,28 @@
                             <li class="nav-item">
                                 <a class="nav-link color-pink-hover" href="<?= base_url(); ?>">Home</a>
                             </li>
+                            <li class="nav-item dropdown has-submenu">
+                                <a class="nav-link dropdown-toggle" href="<?= base_url('warta'); ?>" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warta</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                                    <?php foreach($warta->result() as $key => $wartas ) : ?>
+                                    <li><a class="dropdown-item" href="<?= base_url('warta/kategori/'.$wartas->category_id); ?>"><?= $wartas->category_name; ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </li>
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
-                                <a class="nav-link dropdown-toggle" href="<?= base_url('warta'); ?>" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warta</a>
+                                <a class="nav-link dropdown-toggle" href="<?= base_url('warta'); ?>" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warta Versi 2</a>
                                 <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
                                     <li>
                                         <div class="mega-menu-content clearfix">
                                             <div class="tab">
-                                                <button class="tablinks active" onclick="openCategory(event, 'cat01')">Beauty</button>
-                                                <button class="tablinks" onclick="openCategory(event, 'cat02')">Fashion</button>
+                                                <!-- ================================================================== -->
+                                                <!-- Menu versi dinamis -->
+                                                <!-- <?php foreach($warta->result() as $key => $wartas ) : ?>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat01')"><?= $wartas->category_name; ?></button>
+                                                <?php endforeach; ?> -->
+                                                <!-- ================================================================== -->
+                                                <button class="tablinks active" onclick="openCategory(event, 'cat01')">Nasional</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat02')">Daerah</button>
                                                 <button class="tablinks" onclick="openCategory(event, 'cat03')">Travel</button>
                                                 <button class="tablinks" onclick="openCategory(event, 'cat04')">Architecture</button>
                                                 <button class="tablinks" onclick="openCategory(event, 'cat05')">Recipes</button>
@@ -91,69 +105,25 @@
                                             <div class="tab-details clearfix">
                                                 <div id="cat01" class="tabcontent active">
                                                     <div class="row">
-                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img src="<?php echo base_url();?>assets/front/upload/menu_01.jpg" alt="" class="img-fluid">
-                                                                        <div class="hovereffect">
-                                                                        </div><!-- end hover -->
-                                                                        <span class="menucat">Spa</span>
-                                                                    </a>
-                                                                </div><!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4><a href="single.html" title="">Top 10+ care advice for your toenails</a></h4>
-                                                                </div><!-- end meta -->
-                                                            </div><!-- end blog-box -->
-                                                        </div>
+                                                        <?php foreach($warta->result() as $key => $wartas ) : ?>
+                                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="single.html" title="">
+                                                                            <img src="<?php echo base_url();?>assets/front/upload/menu_01.jpg" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat">Spa</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="single.html" title=""><?= $wartas->title; ?></a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        <?php endforeach; ?>
 
-                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img src="<?php echo base_url();?>assets/front/upload/menu_02.jpg" alt="" class="img-fluid">
-                                                                        <div class="hovereffect">
-                                                                        </div><!-- end hover -->
-                                                                        <span class="menucat">Beauty</span>
-                                                                    </a>
-                                                                </div><!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4><a href="single.html" title="">The secret of your beauty is handmade soap</a></h4>
-                                                                </div><!-- end meta -->
-                                                            </div><!-- end blog-box -->
-                                                        </div>
-
-                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img src="<?php echo base_url();?>assets/front/upload/menu_03.jpg" alt="" class="img-fluid">
-                                                                        <div class="hovereffect">
-                                                                        </div><!-- end hover -->
-                                                                        <span class="menucat">Beauty</span>
-                                                                    </a>
-                                                                </div><!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4><a href="single.html" title="">Benefits of face mask made from mud</a></h4>
-                                                                </div><!-- end meta -->
-                                                            </div><!-- end blog-box -->
-                                                        </div>
-
-                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img src="<?php echo base_url();?>assets/front/upload/menu_04.jpg" alt="" class="img-fluid">
-                                                                        <div class="hovereffect">
-                                                                        </div><!-- end hover -->
-                                                                        <span class="menucat">Spa</span>
-                                                                    </a>
-                                                                </div><!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4><a href="single.html" title="">Relax with the unique warmth of candle flavor</a></h4>
-                                                                </div><!-- end meta -->
-                                                            </div><!-- end blog-box -->
-                                                        </div>
+                                                        
                                                     </div><!-- end row -->
                                                 </div>
                                                 <div id="cat02" class="tabcontent">
