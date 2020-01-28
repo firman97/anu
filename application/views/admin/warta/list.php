@@ -36,7 +36,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form action="<?php echo base_url('admin/warta/tambah') ?>" method="post">
+                      <form action="<?php echo base_url('admin/warta/tambah') ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                           <div class="form-group">
                             <label for="titleWarta" class="col-form-label">Judul</label>
@@ -56,7 +56,7 @@
                           </div>
                           <div class="form-group">
                             <label for="gambarWarta" class="col-form-label">Gambar</label>
-                            <input type="text" class="form-control" id="gambarWarta" name="gambarWarta">
+                            <input type="file" class="form-control" id="gambarWarta" name="gambarWarta">
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -93,6 +93,7 @@
                       <th>Konten</th>
                       <th>Kategori</th>
                       <th>Gambar</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -111,6 +112,10 @@
                       </td>
                       <td><?= $wartas->category_name; ?></td>
                       <td><?= $wartas->image; ?></td>
+                      <td>
+                        <a href="<?php echo base_url('admin/warta/hapus/'.$wartas->blog_id) ?>"><i class='fas fa-trash'></i></a>
+                        <a href="<?php echo base_url('admin/warta/edit/'.$wartas->blog_id) ?>"><i class='fas fa-edit'></i></a>
+                      </td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>

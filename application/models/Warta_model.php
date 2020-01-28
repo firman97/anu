@@ -1,8 +1,4 @@
 <?php
-	/*
-    @Copyright Indra Rukmana
-    @Class Name : Blogs Model
-	*/
     defined('BASEPATH') OR exit('No direct script access allowed');
 
     class Warta_model extends CI_Model {
@@ -57,6 +53,10 @@
             $this->db->insert('warta',$data);
         }
 
-                                                                                            
+        public function hapus($id) {
+            $this->db->where('blog_id',$id);
+            $this->db->delete('warta');
+        } 
 
+                                                                                            
     }

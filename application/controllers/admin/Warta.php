@@ -19,10 +19,20 @@ class Warta extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data);
 	}
 
+	function upload() {
+        $config['upload_path'] = './assets/admin/img/warta/';
+        $config['allowed_types'] = 'png|jpg|JPG';
+        $config['max_size'] = 1000000;
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('gambarWarta');
+        $uploads = $this->upload->data();
+        return $uploads['file_name'];
+    }
 
 	public function tambah()
 	{
 		$i = $this->input;
+		$gambarWarta = $this->upload();
 		$slug_blog = url_title($this->input->post('titleWarta'), 'dash', TRUE);
 		$data = array(
 								'blog_id'		=> '',
@@ -34,11 +44,19 @@ class Warta extends CI_Controller {
 								'date_post'		=> $i->post('date_post'),
 								'status'		=> 'sama',
 								'keywords'		=> 'sama saja',
-								'image'			=> $i->post('gambarWarta')
+								'image'			=> $gambarWarta
 					);
 		$this->load->view('admin/layout/wrapper', $data);
 		$this->Warta_model->tambah($data);
 		redirect('admin/warta');
+	}
+
+	public function hapus($id){
+		$this->Warta_model->hapus($id);
+		if($this->db->affected_rows() > 0){
+			echo "<script>alert('Warta berhasil dihapus');</script>";
+		}
+		echo "<script>window.location='".site_url('admin/warta')."'</script>";
 	}
 
 }
