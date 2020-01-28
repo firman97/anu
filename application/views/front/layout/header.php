@@ -80,6 +80,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdown02">
                                     <li><a class="dropdown-item" href="<?= base_url('warta/kategori/1'); ?>">Nasional</a></li>
                                     <li><a class="dropdown-item" href="<?= base_url('warta/kategori/2'); ?>">Daerah</a></li>
+                                    <li><a class="dropdown-item" href="<?= base_url('warta/kategori/3'); ?>">Internasional</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">

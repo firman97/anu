@@ -53,6 +53,10 @@
             return $query;
         } 
 
+        public function tambah($data) {
+            $this->db->insert('warta',$data);
+        }
+
                                                                                             
 
     }
